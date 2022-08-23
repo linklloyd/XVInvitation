@@ -1,38 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face { 
+  font-family: "Comicate"; 
+   /* IE */
+   src: url("../comicate/COMICATE.ttf");
+   /* IE */
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 800px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: "Open Sans";
+  background-color: #282c34;
+}
+
+.AppWhite {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+  background-color: #ffffff;
+}
+
+.clock {
+  position: relative;
+  margin: a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: d2c8c8;
+  height: 180px;
+  width: 400px;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 7px;
+  border-radius: 15px;
+  border: 2px solid silver;
+  box-shadow: 0 0 5px 15px;
+}
+
+.clock section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.clock section p{
+  font-size: 3rem;
+}
+
+.clock section small{
+color: silver;
+text-shadow: none;
+}
+
+.textHeader {
+  font-family: "Comicate";   
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  background-color: rgb(175, 227, 228);
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100px;
+}
+
+.infoBlack {
+  color: aliceblue;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: right;
+  padding-bottom: 30px;
+}
+
+.infoBlack h1{
+  font-family: "Comicate";   
+  padding: 70px 50px 20px;
+}
+
+.infoBlack p{
+  font-size: 20px;
+}
+
+.infoWhite {
+  color: rgb(0, 0, 0);
+  align-items: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: right;
+  padding-bottom: 30px;
+}
+
+.infoWhite h1{
+  font-family: "Comicate";   
+  padding: 70px 50px 20px;
+}
+
+.infoWhite p{
+  font-size: 20px;
+}
+
+/* Custom Button */
+.button {
+  border: none;
   color: white;
+  padding: 10px 32px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #04a491;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {background-color: #007466}
+
+.button:active {
+  background-color: #016055;
+  transform: translateY(2px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.input-field label {
+  color: #04a491;
+  margin-bottom: 12px;
+}
+
+.input-field input {
+  border-radius: 4px;
+  border-width: 1px;
+  min-height: 45px;
+  font-size: medium;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.input-field textarea {
+  border-radius: 4px;
+  border-width: 1px;
+  min-height: 45px;
+  font-size: large;
+  padding: 8px;
+}
+
+
+.input-field-message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1px;
+}
+
+.input-field-message label {
+  color: #04a491;
+  margin-bottom: 12px;
+}
+
+.input-field-message input {
+  border-radius: 4px;
+  border-width: 1px;
+  min-height: 45px;
+  font-size: medium;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.input-field-message textarea {
+  border-radius: 4px;
+  border-width: 1px;
+  min-height: 45px;
+  font-size: large;
+  padding: px;
 }
