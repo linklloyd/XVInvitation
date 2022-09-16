@@ -17,7 +17,7 @@ function Maps() {
     googleMapsApiKey: "AIzaSyDAqinXwCCK044Ajlj0dZ1OxghrkZboCls"
   })
 
-  const [map, setMap] = React.useState(null)
+  const [, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -25,7 +25,7 @@ function Maps() {
     setMap(map)
   }, [])
 
-  const onUnmount = React.useCallback(function callback(map) {
+  const onUnmount = React.useCallback(function callback() {
     setMap(null)
   }, [])
 

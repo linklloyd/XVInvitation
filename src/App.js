@@ -58,7 +58,7 @@ useEffect(()=>{
     <div>
       <div className="AppWhite">
         <div classname="xvimage">
-      <img src={fifteen}  width="570" height="570"/>
+      <img src={fifteen} alt="portada" width="570" height="570"/>
       </div>
       </div>
 
@@ -83,13 +83,13 @@ useEffect(()=>{
       </div>
       <Header text="Vestimenta" type="textHeader2"/>
       <div className="AppWhite infoWhite">
-      <img src={vestimenta} />
+      <img src={vestimenta} alt="vestimenta"/>
         <Info Title="Formal" Text="*Evento al aire libre en jardín"/>
       </div>
       <Header text="Mesa de Regalos" type="textHeader"/>
       <div className="App">
       <Info mode="infoWhite" Title="El mejor regalo que puedo recibir, es compartir este momento con ustedes." Text='Si gustan darme un obsequio, pueden hacerlo en mi mesa de regalo en'/>
-        <img src={liverpool} />
+        <img src={liverpool} alt="liverpool"/>
         <Info mode="infoWhite" Text='Núm. de Evento: #######'/>
       </div>
       <Header text="Confirmación" type="textHeader2"/>
