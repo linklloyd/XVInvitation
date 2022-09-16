@@ -1,17 +1,14 @@
 export const SliderData = [
     {
-        image: "https://poketwo.s3.object1.us-east-1.tswcloud.com/staging/images/10055.png?v=26"
+        image: "https://image.shutterstock.com/image-photo/female-hand-holding-number-15-600w-1767453110.jpg"
     },
     {
-        image: "https://poketwo.s3.object1.us-east-1.tswcloud.com/staging/images/10.png?v=26"
+        image: "https://image.shutterstock.com/image-photo/monterrey-nuevo-leon-mexico-september-600w-2037310571.jpg"
     },
     {
-        image: "https://poketwo.s3.object1.us-east-1.tswcloud.com/staging/shiny/50014.png?v=26"
+        image: "https://image.shutterstock.com/image-photo/fifteenyearold-party-elements-balloons-flowers-600w-1317545945.jpg"
     },
     {
-        image: "https://poketwo.s3.object1.us-east-1.tswcloud.com/staging/images/10044.png?v=26"
-    },
-    {
-        image: "https://poketwo.s3.object1.us-east-1.tswcloud.com/staging/images/447.png?v=26"
+        image: "https://image.shutterstock.com/image-photo/decorative-fifteen-year-birthday-cake-600w-575426785.jpg"
     }
 ]

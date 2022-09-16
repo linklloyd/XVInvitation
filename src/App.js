@@ -7,6 +7,11 @@ import Info from "./components/Info"
 import Header from "./components/Header";
 import ImageSlider from "./components/ImageSlider";
 import { SliderData } from "./components/SliderData";
+import vestimenta from './vestimenta.png';
+import liverpool from './liverpool-logo.png';
+import fifteen from "./fifteen.png"
+import Xvtext from './components/XVText'
+
 
 function App() {
   const [timerDays, setTimerDays] = useState();
@@ -51,8 +56,15 @@ useEffect(()=>{
 
   return (
     <div>
+      <div className="AppWhite">
+        <div classname="xvimage">
+      <img src={fifteen}  width="570" height="570"/>
+      </div>
+      </div>
+
       <div className="App">
-      <Info mode="infoBlack" Title="16 / Octubre / 2022" Text="Faltan:"/>
+      <Xvtext Texts="Mis XV" name="Fernanda Josselyn"/>
+      <Info mode="infoWhite" Title="16 | Octubre | 2022" Text="Faltan:"/>
         <Clock
           timerDays={timerDays}
           timerHours={timerHours}
@@ -60,25 +72,29 @@ useEffect(()=>{
           timerSeconds={timerSeconds}
         />
       </div>
-      <Header text="galeria"/>
+      <Header text="Galeria" type="textHeader3"/>
       <div>
       <ImageSlider slides={SliderData} />
       </div>
-      <Header text="mapas"/>
+      <Header text="Mapas" type="textHeader"/>
       <div className="App">
         <Info mode="infoBlack" Title="Misa" Text="La Misa de Acción de Gracias se celebrará a las 17:00 hrs. en la capilla...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius dui ut porta iaculis. Integer eleifend aliquam odio vitae faucibus. Nam id massa mi"/>
         <Maps />
       </div>
-      <Header text="Vestimenta"/>
-      <div className="AppWhite">
-        <Info mode="infoWhite" Title="Formal" Text="*Evento al aire libre en jardín"/>
+      <Header text="Vestimenta" type="textHeader2"/>
+      <div className="AppWhite infoWhite">
+      <img src={vestimenta} />
+        <Info Title="Formal" Text="*Evento al aire libre en jardín"/>
       </div>
-      <Header text="Mesa de Regalos"/>
+      <Header text="Mesa de Regalos" type="textHeader"/>
       <div className="App">
-        <Info mode="infoBlack" Text="*Evento al aire libre en jardín"/>
+      <Info mode="infoWhite" Title="El mejor regalo que puedo recibir, es compartir este momento con ustedes." Text='Si gustan darme un obsequio, pueden hacerlo en mi mesa de regalo en'/>
+        <img src={liverpool} />
+        <Info mode="infoWhite" Text='Núm. de Evento: #######'/>
       </div>
-      <Header text="Confirmación"/>
+      <Header text="Confirmación" type="textHeader2"/>
       <div className="AppWhite">
+      <Info mode="infoWhite" Title='C. Sergio Ivan Ruiz Roque y Esposa'/>
         <Confimacion />
       </div>
     </div>
