@@ -1,73 +1,10 @@
-/*import React, { useState } from "react";
-
-const Confirmacion = () => {
-  const [inputs, setInputs] = useState({});
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputs);
-  };
-
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="input-field">
-          <label>Asistira?</label>
-          <select
-            name="asisst"
-            value={inputs.guests}
-            onChange={handleChange}
-          >
-            <option value="noasistire">No asistire</option>
-            <option value="asistire">Si asistire</option>
-          </select>
-        </div>
-        <div className="input-field">
-          <label>
-            Numero de invitados
-            <input
-              type="number"
-              name="guests"
-              value={inputs.guests || ""}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
-        <div className="input-field-message">
-        <label>
-          <input
-            style={{ height: "100px", width: "400px" }}
-            type="text"
-            name="message"
-            value={inputs.message || ""}
-            onChange={handleChange}
-            placeholder="Escriba un mensaje para la Quinceañera"
-          />
-        </label>
-        </div>
-        <div className="buttons-container">
-        <button type="submit" className="button">Confirmar</button>
-        </div>
-      </form>
-    </div>
-  );
-};
-
-export default Confirmacion;*/
 export default function Example() {
   return (
-    <form className="space-y-8 divide-y divide-gray-200">
+    <form>
       <div className="form">
-        <div className="space-y-6 sm:space-y-5">
-        <div className="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
-              <label htmlFor="attendance" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+        {/* <div>
+        <div>
+              <label htmlFor="attendance" className="fix">
                 Asistira?
               </label>
               <div className="mt-1 sm:col-span-2 sm:mt-0">
@@ -75,28 +12,45 @@ export default function Example() {
                   id="attendance"
                   name="attendance"
                   autoComplete="attendance-name"
-                  className="input-select"
+                  className="form-select px-4 py-3 rounded-full"
                     >
                   <option>Si Asistire</option>
                   <option>No Asistire</option>
                 </select>
               </div>
             </div>
-        </div>
+        </div> */}
+            <div>
+      <label htmlFor="attendance" className="fix block text-sm font-medium text-gray-700">
+      Asistira?
+      </label>
+      <select
+        id="attendance"
+        name="attendance"
+        className="input-select mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+        defaultValue="Si Asistire"
+      >
+        <option>Si Asistire</option>
+        <option>No Asistire</option>
+      </select>
+    </div>
 
-        <div className="space-y-6 pt-8 sm:space-y-5 sm:pt-10">
+        <div>
           <div>
-            <h3>Indique la cantidad de asistencias</h3>
-            <p className="mt-1 max-w-2xl text-sm text-gray-500">Adultos</p>
-            <input className="input-select" type="number" id="guests" name="guests"
+            <h3 className="fix2">Indique la cantidad de asistencias</h3>
+            <label htmlFor="guests" className="fix block text-sm font-medium text-gray-700">
+            Adultos
+            </label>
+            <input className="input-select mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" type="number" id="guests" name="guests"
        min="0" max="100" ></input>
           </div>
-          <div className="space-y-6 sm:space-y-5">
+          <div>
           </div>
           <br></br>
-        </div>
-        <div className="space-y-6 sm:space-y-5">
-              <div className="mt-1 sm:col-span-2 sm:mt-0">
+        </div> 
+        
+        {/* <div>
+              <div>
                 <textarea
                   id="message"
                   name="message"
@@ -106,15 +60,26 @@ export default function Example() {
                   placeholder="Escriba un mensaje para la Quinceañera"
                 />
               </div>
-          </div>
+          </div>  */}
+          <div>
+      <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
+      </label>
+      <div className="mt-1">
+        <textarea
+          rows={4}
+          placeholder="Escriba un mensaje para la Quinceañera"
+          name="comment"
+          id="comment"
+          className="input-fields block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          defaultValue={''}
+        />
+      </div>
+    </div>
       </div>
 
       <div className="pt-5">
         <div className="flex justify-end">
-        <button
-        type="sumbit"
-        className="button fix"
-      >
+        <button type="sumbit" className="button">
         Confirmar
       </button>
         </div>
