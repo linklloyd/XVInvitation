@@ -3,15 +3,14 @@ import React, { useState, useEffect } from "react";
 import Clock from "./components/Clock";
 import Maps from "./components/Map";
 import Confimacion from "./components/Confimacion"
-import Info from "./components/Info"
-import Header from "./components/Header";
-import ImageSlider from "./components/ImageSlider";
+import TextInfo from "./components/Info"
 import { SliderData } from "./components/SliderData";
 import vestimenta from './vestimenta.png';
 import liverpool from './liverpool-logo.png';
 import fifteen from "./fifteen.png"
-import Xvtext from './components/XVText'
-
+import { Header, Section, Subheader, Paragraph, Wrapper, Content } from "./components";
+import Carousel from "nuka-carousel";
+import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from 'react-icons/bs';
 
 function App() {
   const [timerDays, setTimerDays] = useState();
@@ -56,47 +55,101 @@ useEffect(()=>{
 
   return (
     <div>
-      <div className="AppWhite">
-        <div classname="xvimage">
-      <img src={fifteen} alt="portada" width="570" height="570"/>
-      </div>
-      </div>
+      <Section>
+        <Header size="lg" font="dancing">Mis XV años</Header>
+        <Header as="h2" size="md" font="dancing">Fernanda Josselyn</Header>
+        <img src={fifteen} alt="portada" width="570" height="570"/>
+      </Section>
 
-      <div className="App">
-      <Xvtext Texts="Mis XV" name="Fernanda Josselyn"/>
-      <Info mode="infoWhite" Title="16 | Octubre | 2022" Text="Faltan:"/>
-        <Clock
-          timerDays={timerDays}
-          timerHours={timerHours}
-          timerMinutes={timerMinutes}
-          timerSeconds={timerSeconds}
-        />
-      </div>
-      <Header text="Galeria" type="textHeader3"/>
-      <div>
-      <ImageSlider slides={SliderData} />
-      </div>
-      <Header text="Mapas" type="textHeader"/>
-      <div className="App">
-        <Info mode="infoBlack" Title="Misa" Text="La Misa de Acción de Gracias se celebrará a las 17:00 hrs. en la capilla...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius dui ut porta iaculis. Integer eleifend aliquam odio vitae faucibus. Nam id massa mi"/>
-        <Maps />
-      </div>
-      <Header text="Vestimenta" type="textHeader2"/>
-      <div className="AppWhite infoWhite">
-      <img src={vestimenta} alt="vestimenta"/>
-        <Info Title="Formal" Text="*Evento al aire libre en jardín"/>
-      </div>
-      <Header text="Mesa de Regalos" type="textHeader"/>
-      <div className="App">
-      <Info mode="infoWhite" Title="El mejor regalo que puedo recibir, es compartir este momento con ustedes." Text='Si gustan darme un obsequio, pueden hacerlo en mi mesa de regalo en'/>
-        <img src={liverpool} alt="liverpool"/>
-        <Info mode="infoWhite" Text='Núm. de Evento: #######'/>
-      </div>
-      <Header text="Confirmación" type="textHeader2"/>
-      <div className="AppWhite">
-      <Info mode="infoWhite" Title='C. Sergio Ivan Ruiz Roque y Esposa'/>
-        <Confimacion />
-      </div>
+      <Section color="pink">
+        <TextInfo header="Fecha del evento" subheader="16 / Octubre / 2022" text="Faltan"/>
+        
+        <Wrapper size="sm">
+          <Clock
+            timerDays={timerDays}
+            timerHours={timerHours}
+            timerMinutes={timerMinutes}
+            timerSeconds={timerSeconds}
+          />
+        </Wrapper>
+
+      </Section>
+
+      <Section>
+        <Header as="h3">Galeria</Header>
+
+        <Carousel 
+          className="flex w-full" 
+          style={{ maxWidth: "70vw", maxHeight: "800px", overflow: "hidden" }} 
+          slidesToShow={1} 
+          autoplay
+          animation="zoom" 
+          adaptiveHeight={false} 
+          dragging 
+          enableKeyboardControls 
+          pauseOnHover
+          wrapAround
+          scrollMode="page"
+          renderCenterLeftControls={({previousDisabled, previousSlide }) => {
+            return <BsArrowLeftSquareFill className="left-arrow" disabled={previousDisabled} onClick={previousSlide} />
+          }}
+          renderCenterRightControls={({nextDisabled, nextSlide }) => {
+            return <BsArrowRightSquareFill className="right-arrow" disabled={nextDisabled} onClick={nextSlide} />
+          }}
+        >
+          {SliderData.map((slide, index) => (<img src={slide.image} alt="" style={{
+            maxWidth: "100%",
+            maxHeight: "100%",
+            width: "100%",
+            height: "auto",
+            resize: "both",
+            aspectRatio: "16/12"
+          }} />))}
+        </Carousel>
+      </Section>
+
+      <Section color="pink">
+        <Header as="h3">Lugares del evento</Header>
+
+        <Content>
+          <Subheader>Misa</Subheader>
+
+          <Paragraph>
+            La Misa de Acción de Gracias se celebrará a las 17:00 hrs. en la capilla...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius dui ut porta iaculis. Integer eleifend aliquam odio vitae faucibus. Nam id massa mi
+          </Paragraph>
+        </Content>
+
+
+        <Wrapper size="md">
+          <Maps />
+        </Wrapper>
+      </Section>
+
+      <Section>
+        <Header as="h3">Tipo de vestimenta</Header>
+        <Wrapper>
+        <img src={vestimenta} alt="vestimenta" height={320} width={320} />
+        </Wrapper>        
+        <TextInfo subheader="Formal" text="Evento al aire libre en jardín"/>
+      </Section>
+
+      <Section color="pink">
+      <TextInfo header="Mesa de Regalos" subheader="El mejor regalo que puedo recibir, es compartir este momento con ustedes." text="Si gustan darme un obsequio, pueden hacerlo en mi mesa de regalo en"/>
+        <Wrapper>
+        <img src={liverpool} alt="liverpool" height={90} width={340} />
+        </Wrapper>
+        <TextInfo text='Núm. de Evento: #######'/>
+      </Section>
+
+      <Section color="pinkDark">  
+          <Header as="h3">Confimación</Header>
+          <Subheader>C. Sergio Ivan Ruiz Roque y Esposa</Subheader>
+          <Wrapper>
+          <Confimacion />
+          </Wrapper>
+      </Section>
+
+      
     </div>
   );
 }
