@@ -11,6 +11,7 @@ import fifteen from "./fifteen.png"
 import { Header, Section, Subheader, Paragraph, Wrapper, Content } from "./components";
 import Carousel from "nuka-carousel";
 import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from 'react-icons/bs';
+import { Helmet } from "react-helmet";
 
 function App() {
   const [timerDays, setTimerDays] = useState();
@@ -55,6 +56,11 @@ useEffect(()=>{
 
   return (
     <div>
+      <Helmet>
+        <title>XV Años de Fernanda Josselyn</title>
+        <link rel="canonical" href="https://xvdemo.netlify.app/" />
+      </Helmet>
+      
       <Section>
         <Header size="lg" font="dancing">Mis XV años</Header>
         <Header as="h2" size="md" font="dancing">Fernanda Josselyn</Header>
@@ -130,7 +136,7 @@ useEffect(()=>{
         <Wrapper>
         <img src={vestimenta} alt="vestimenta" height={320} width={320} />
         </Wrapper>        
-        <TextInfo subheader="Formal" text="Evento al aire libre en jardín"/>
+        <TextInfo subheader="Formal" text="*Evento al aire libre en jardín"/>
       </Section>
 
       <Section color="pink">
