@@ -1,18 +1,26 @@
 import React from "react";
+import { Subheader, Paragraph, Header } from "./index";
 
-const Info = ({ Title, Text , mode, Texts, name}) => {
+const TextInfo = ({ header, subheader, text}) => {
     return (
-        <div className={mode}>
-            <h1>{Title}</h1>
-            <p>{Text}</p>
-
-        </div>
+        <>
+        {
+            header && header.length > 0 && (
+                <Header>{header}</Header>
+            )
+        }
+        {
+            subheader && subheader.length > 0 && (
+                <Subheader>{subheader}</Subheader>
+            )
+        }
+        {
+            text && text.length > 0 && (
+                <Paragraph>{text}</Paragraph>
+            )
+        }
+        </>
     )
-}
+};
 
-Info.defaultProps = {
-    Text: "",
-    Title: ""
-  };
-
-export default Info;
+export default TextInfo;
